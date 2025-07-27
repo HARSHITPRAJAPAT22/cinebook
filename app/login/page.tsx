@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -104,7 +105,7 @@ export default function Login() {
           localStorage.setItem('cinebook_token', signupData.token);
           window.location.href = '/';
         } else {
-          alert(signupData.message || 'Google login failed');
+          toast.error(signupData.message || 'Google login failed');
         }
       }
     });
