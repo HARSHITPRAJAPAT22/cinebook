@@ -48,7 +48,7 @@ console.log('Received token:', token);
         message: 'User not found'
       }, { status: 404 });
     }
-
+    delete user.password;
     const {  ...userInfo } = user;
 
     return NextResponse.json({

@@ -9,6 +9,8 @@ const JWT_SECRET: string = process.env.JWT_SECRET as string;
 export async function POST(request: Request) {
   const { name, email, googleId, facebookId, authProvider } = await request.json();
 
+  console.log('Received data:', { name, email, googleId, facebookId, authProvider });
+  console.log('Environment variables:', { uri, dbName, JWT_SECRET });
   const client = new MongoClient(uri);
   try {
     await client.connect();
