@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { RiSearchLine } from 'react-icons/ri';
 
 interface Movie {
   id: number;
@@ -77,7 +77,7 @@ export default function MoviesPage() {
   useEffect(() => {
     fetchMovies();
     // eslint-disable-next-line
-  }, [searchTerm, selectedGenre, selectedLanguage, dateFrom, dateTo, selectedRegion]);
+  }, [selectedGenre, selectedLanguage, dateFrom, dateTo, selectedRegion]);
 
   const fetchMovies = async () => {
     try {
@@ -216,13 +216,26 @@ export default function MoviesPage() {
           <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Search Movies</label>
-              <input
-                type="text"
-                placeholder="Search by title..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
-              />
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search by title..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') fetchMovies();
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm pr-10"
+                />
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-red-600 hover:text-red-700"
+                  onClick={fetchMovies}
+                  aria-label="Search"
+                >
+                  <RiSearchLine size={20} />
+                </button>
+              </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Genre</label>

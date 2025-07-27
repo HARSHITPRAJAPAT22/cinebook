@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request, { params }: { params: { paymentId: string } }) {
-  const paymentId =  params.paymentId;
-  const key_id = process.env.NEXT_PUBLIC_RAZORPAY_KEY;
-  const key_secret = process.env.NEXT_PUBLIC_RAZORPAY_KEY_SECRET;
+export async function GET(request: Request, context : any) {
+  const paymentId : string =  context.params.paymentId;
+  const key_id : string = process.env.NEXT_PUBLIC_RAZORPAY_KEY as string;
+  const key_secret : string = process.env.NEXT_PUBLIC_RAZORPAY_KEY_SECRET as string;
     if (!key_id || !key_secret) {
         return NextResponse.json({ error: 'Razorpay credentials not set' }, { status: 500 });
     }

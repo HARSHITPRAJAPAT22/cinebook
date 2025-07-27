@@ -1,7 +1,6 @@
 import React from 'react';
 import { Booking } from '@/lib/models/model';
 import { useEffect } from 'react';
-import { cn } from '@/lib/utils'
 
 interface BookingCardProps {
   booking: Booking;

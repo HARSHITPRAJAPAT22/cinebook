@@ -1,10 +1,20 @@
 {
+  "/api/Auth/signUp/route": "app/api/Auth/signUp/route.js",
+  "/api/Auth/signIn/route": "app/api/Auth/signIn/route.js",
+  "/api/bookings/route": "app/api/bookings/route.js",
+  "/api/me/booking/route": "app/api/me/booking/route.js",
   "/api/me/route": "app/api/me/route.js",
+  "/api/payment/[paymentId]/route": "app/api/payment/[paymentId]/route.js",
+  "/api/theator/route": "app/api/theator/route.js",
   "/auth/google/route": "app/auth/google/route.js",
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/auth/google/callback/page": "app/auth/google/callback/page.js",
   "/bookings/page": "app/bookings/page.js",
-  "/theaters/page": "app/theaters/page.js",
-  "/movie/[id]/page": "app/movie/[id]/page.js",
   "/login/page": "app/login/page.js",
-  "/auth/google/callback/page": "app/auth/google/callback/page.js"
+  "/page": "app/page.js",
+  "/theaters/page": "app/theaters/page.js",
+  "/booking/[id]/page": "app/booking/[id]/page.js",
+  "/movie/[id]/page": "app/movie/[id]/page.js",
+  "/movies/page": "app/movies/page.js"
 }

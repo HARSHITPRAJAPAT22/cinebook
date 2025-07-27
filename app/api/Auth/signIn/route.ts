@@ -84,6 +84,7 @@ export async function POST(request: Request) {
       token
     });
   } catch (error) {
+         console.error('SignIn error:', error)
     return NextResponse.json({
       success: false,
       message: 'Server error'

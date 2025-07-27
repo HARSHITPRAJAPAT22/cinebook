@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI as string;
@@ -104,6 +103,7 @@ export async function POST(request: Request) {
       token
     });
   } catch (error) {
+    console.error('Google Auth error:', error);
     return NextResponse.json({
       success: false,
       message: 'Server error'

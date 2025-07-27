@@ -49,7 +49,7 @@ export default function NotFound() {
       </div>
 
       {/* Custom CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes bounce-slow {
           0%, 100% {
             transform: translateY(0);

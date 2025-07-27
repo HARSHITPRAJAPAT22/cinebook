@@ -66,7 +66,7 @@ import BookingPage from './BookingPage';
 //   ];
 // }
 
-export default async function MoviePage({ params }: { params: { id: string } }) {
-  const { id } = await params;
+export default async function MoviePage({ params }: { params: any }) {
+  const { id } : { id: string } = await params;
   return <BookingPage params={{ id }} />;
 }

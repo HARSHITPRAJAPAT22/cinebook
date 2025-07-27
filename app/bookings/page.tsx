@@ -1,12 +1,11 @@
 'use client';
 
 import { use, useEffect, useState } from 'react';
-import Link from 'next/link';
-// import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import QRCode from 'qrcode';
 import { Booking } from '@/lib/models/model';
 import BookingCard from '@/components/BookingCard';
+import Link from 'next/link';
 
 export default function BookingsPage() {
   const [statusFilter, setStatusFilter] = useState('All');
@@ -55,7 +54,7 @@ export default function BookingsPage() {
           })
       );
 
-      let bookings = Array.isArray(data.user?.bookings) ? data.user.bookings : [];
+      const bookings = Array.isArray(data.user?.bookings) ? data.user.bookings : [];
 
       // Fetch payment details for each booking
       const bookingsWithPayment = await Promise.all(

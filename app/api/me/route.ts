@@ -19,6 +19,7 @@ const token = request.headers.get('authorization')?.replace(/^Bearer\s/, '');
   try {
     payload = jwt.verify(token, JWT_SECRET);
   } catch (err) {
+    console.error('JWT verification error:', err);
     return NextResponse.json({
       success: false,
       message: 'Invalid or expired token'
@@ -47,8 +48,7 @@ const token = request.headers.get('authorization')?.replace(/^Bearer\s/, '');
       }, { status: 404 });
     }
 
-    // Don't send password
-    const { password, ...userInfo } = user;
+    const {  ...userInfo } = user;
 
     return NextResponse.json({
       success: true,

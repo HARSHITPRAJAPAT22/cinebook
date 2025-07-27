@@ -244,7 +244,7 @@ export default function MovieGrid({ location }: { location: string }) {
     try {
       const fifteenDaysAgoStr = new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
       setLoadingBollywood(true);
-      let url = `https://api.themoviedb.org/3/discover/movie?api_key=328aa2fcc30517cb12a60920c82d1f97&region=IN&with_original_language=hi&language=en-US&primary_release_date.gte=${fifteenDaysAgoStr}&primary_release_date.lte=${todayStr}`;
+      const url = `https://api.themoviedb.org/3/discover/movie?api_key=328aa2fcc30517cb12a60920c82d1f97&region=IN&with_original_language=hi&language=en-US&primary_release_date.gte=${fifteenDaysAgoStr}&primary_release_date.lte=${todayStr}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch Bollywood movies');
       const data = await response.json();

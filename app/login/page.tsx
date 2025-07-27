@@ -1,10 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-// import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);

@@ -4,3 +4,11 @@ node_modules
 //environment variables
 .env
 .env.local
+
+.next
+
+/.next
+/.next/cache    
+
+/.next/server
+

@@ -1,13 +1,11 @@
 'use client';
 
-import { useState, useEffect, Suspense, use } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-// import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import type { Booking } from '@/lib/models/model';
 import { toast } from 'react-toastify';
-import { ObjectId } from 'mongodb';
 
 interface BookingPageProps {
   movieId: string;
@@ -125,7 +123,7 @@ function BookingContent({ movieId }: BookingPageProps) {
       };
       fetchTheater();
     }
-  })
+  },[])
   async function saveBookingToBackend(userId: string, booking: Booking) {
     const response = await fetch('/api/bookings', {
       method: 'POST',
@@ -176,7 +174,7 @@ function BookingContent({ movieId }: BookingPageProps) {
     const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const seatsPerRow = 12;
 
-    for (let row of rows) {
+    for (const row of rows) {
       for (let i = 1; i <= seatsPerRow; i++) {
         const seatId = `${row}${i}`;
         const isOccupied = occupiedSeats.includes(seatId);

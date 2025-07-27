@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-// import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export type Theater = {
@@ -171,7 +169,7 @@ export default function TheatersPage() {
               )}
             </button>
           </div>
-          <div className="mb-4 text-gray-600 text-center">{searchStatus}</div>
+          {/* <div className="mb-4 text-gray-600 text-center">{searchStatus}</div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {foundTheaters.map(theater => (
               <div

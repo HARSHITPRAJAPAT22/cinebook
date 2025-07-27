@@ -1,7 +1,7 @@
 import MovieDetail from './MovieDetail';
 
 // Helper function to create a delay
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+// const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 // export async function generateStaticParams() {
 //   try {
@@ -68,8 +68,8 @@ const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 
 
-export default async function MoviePage({ params }: { params: { id: string } }) {
-   const { id } = await params;
+export default async function MoviePage({ params }: { params: any }) {
+   const { id } : { id: string } = await params;
 
   // Fetch the specific movie data for this ID
   // const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=328aa2fcc30517cb12a60920c82d1f97&language=en-US`;

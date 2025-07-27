@@ -25,7 +25,7 @@ export async function GET(request: Request) {
     const db = client.db(dbName);
     const theatersCollection = db.collection('Theaters');
 
-    let theater = await theatersCollection.findOne({ id: theaterId });
+    const theater = await theatersCollection.findOne({ id: theaterId });
 
     // If theater not found, create a new entry
     if (!theater) {
