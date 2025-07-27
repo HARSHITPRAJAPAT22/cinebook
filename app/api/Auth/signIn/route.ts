@@ -42,6 +42,7 @@ export async function POST(request: Request) {
           JWT_SECRET,
           { expiresIn: '7d' }
         );
+        console.log("user token sign in", token);
         return NextResponse.json({
           success: true,
           user: {
@@ -73,7 +74,7 @@ export async function POST(request: Request) {
       JWT_SECRET,
       { expiresIn: '7d' }
     );
-
+console.log("user token sign in", token);
     return NextResponse.json({
       success: true,
       user: {
