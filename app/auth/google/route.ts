@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI as string;
 const dbName: string = process.env.NEXT_PUBLIC_DB_NAME as string;
-const JWT_SECRET: string = process.env.NEXT_PUBLIC_JWT_SECRET as string;
+const JWT_SECRET: string = process.env.JWT_SECRET as string;
 
 export async function POST(request: Request) {
   const { name, email, googleId, facebookId, authProvider } = await request.json();

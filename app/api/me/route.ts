@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const uri = process.env.NEXT_PUBLIC_MONGODB_URI as string;
 const dbName = process.env.NEXT_PUBLIC_DB_NAME as string;
-const JWT_SECRET = process.env.NEXT_PUBLIC_JWT_SECRET as string;
+const JWT_SECRET = process.env.JWT_SECRET as string;
 
 export async function POST(request: Request) {
 const token = request.headers.get('authorization')?.replace(/^Bearer\s/, '');
