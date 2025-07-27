@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const MONGODB_URI = process.env.NEXT_PUBLIC_MONGODB_URI as string;
+const MONGODB_URI = process.env.MONGODB_URI as string;
 const options = { tls: true };
 
 let client: MongoClient;

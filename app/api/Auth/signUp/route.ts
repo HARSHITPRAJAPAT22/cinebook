@@ -3,8 +3,8 @@ import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI as string;
-const dbName: string = process.env.NEXT_PUBLIC_DB_NAME as string;
+const uri: string = process.env.MONGODB_URI as string;
+const dbName: string = process.env.DB_NAME as string;
 const JWT_SECRET: string = process.env.JWT_SECRET as string;
 
 export async function POST(request: Request) {

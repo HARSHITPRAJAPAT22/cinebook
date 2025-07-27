@@ -6,8 +6,8 @@ import { NextResponse } from 'next/server';
 //   const showDateTime = new Date(`${showDate}T${showTime}:00`);
 //   return showDateTime < new Date();
 // }
-const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI as string;
-const dbName: string = process.env.NEXT_PUBLIC_DB_NAME as string;
+const uri: string = process.env.MONGODB_URI as string;
+const dbName: string = process.env.DB_NAME as string;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

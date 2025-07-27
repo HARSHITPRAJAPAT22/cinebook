@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { MongoClient, ObjectId } from 'mongodb';
 
-const uri = process.env.NEXT_PUBLIC_MONGODB_URI as string;
-const dbName = process.env.NEXT_PUBLIC_DB_NAME as string;
+const uri = process.env.MONGODB_URI as string;
+const dbName = process.env.DB_NAME as string;
 
 export async function POST(request: Request) {
   const { userId } = await request.json();

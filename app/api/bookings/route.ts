@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { MongoClient, ObjectId } from "mongodb";
 import {  Theater, User } from "@/lib/models/model";
 
-const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI as string;
-const dbName: string = process.env.NEXT_PUBLIC_DB_NAME as string;
+const uri: string = process.env.MONGODB_URI as string;
+const dbName: string = process.env.DB_NAME as string;
 
 export async function POST(request: Request) {
   const { userId, booking } = await request.json();
