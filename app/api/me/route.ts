@@ -8,6 +8,7 @@ const JWT_SECRET = process.env.JWT_SECRET as string;
 
 export async function POST(request: Request) {
 const token = request.headers.get('authorization')?.replace(/^Bearer\s/, '');
+console.log('Received token:', token);
   if (!token) {
     return NextResponse.json({
       success: false,
