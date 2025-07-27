@@ -7,7 +7,7 @@ const dbName = process.env.NEXT_PUBLIC_DB_NAME as string;
 const JWT_SECRET = process.env.JWT_SECRET as string;
 
 export async function POST(request: Request) {
-const token = request.headers.get('authorization')?.replace(/^Bearer\s/, '');
+const token = request.headers.get('Authorization')?.replace(/^Bearer\s/, '');
 console.log('Received token:', token);
   if (!token) {
     return NextResponse.json({
